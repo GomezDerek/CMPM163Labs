@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Lab 2: Intro to Three.js Part 1</title>
+		<style>
+			body { margin: 0; }
+			canvas { display: block; }
+		</style>
+	</head>
+	<body>
+		<script src="../three.js-master/build/three.js"></script>
+		<script>
+			
+			//add scene, camera, and renderer
+			var scene    = new THREE.Scene();
+			var camera   = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			document.body.appendChild(renderer.domElement);
+			
+			//add cubes
+			var geometry  = new THREE.BoxGeometry();
+			var material0 = new THREE.MeshBasicMaterial( {color: 0xFACADE} );
+			var material1 = new THREE.MeshBasicMaterial( {color: 0x25D0E8} );
+			var material2 = new THREE.MeshBasicMaterial( {color: 0xF2EC72} );
+			var cube_pink     = new THREE.Mesh(geometry, material0);
+			var cube_blue     = new THREE.Mesh(geometry, material1);
+			var cube_yell     = new THREE.Mesh(geometry, material2);
+			scene.add(cube_pink, cube_blue, cube_yell);
+			camera.position.z = 5; //this moves the camera towards the viewer
+			
+                        //scale and position cubes
+                        cube_pink.position.set(0,0,2.5);
+
+                        cube_yell.position.set(0,0,-5);
+                        cube_yell.scale.set(4,4,4);
+
+
+                        cube_blue.position.set(0,0,-15);
+                        cube_blue.scale.set(8, 8, 8);
+
+
+			//calls renderer to render cube geometry
+			function animate() {
+				requestAnimationFrame(animate);
+				renderer.render(scene, camera);
+				
+				cube_pink.rotateY(.01);
+				
+				cube_yell.rotateZ(-.01);
+				//cube_yell.rotateZ(-.01);
+				
+				//cube_blue.rotateX(-.01);
+				cube_blue.rotateX(.01);
+			}
+
+			animate();
+
+		</script>
+	</body>
+</html>
+
