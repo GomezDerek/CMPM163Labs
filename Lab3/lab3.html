@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Lab 3: Shaders in Three.js</title>
+		<style>
+			body { margin: 0; }
+			canvas { display: block; }
+		</style>
+	</head>
+	<body>
+		<script src="../three.js-master/build/three.js"></script>
+		<script>
+			// setup the scene
+      			var scene = new THREE.Scene();
+      			var camera = new THREE.PerspectiveCamera(75, 
+window.innerWidth/window.innerHeight, 0.1, 1000);
+      			var renderer = new THREE.WebGLRenderer();
+      			renderer.setSize(window.innerWidth, window.innerHeight);
+      			document.body.appendChild(renderer.domElement);
+			camera.position.z = 5;
+			
+			// setup the cube
+			var geometry = new THREE.BoxGeometry();
+			//var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );	
+			var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x00ff00, shininess: 30 });
+			var material2 = new THREE.MeshBasicMaterial( { color: 0xffaa00, wireframe: true } );	
+			var material3 = new THREE.MeshPhongMaterial( { color: 0x000000, specular: 0x666666, emissive: 0xff0000, shininess: 10, opacity: 0.9, transparent: true } );
+			var cube = new THREE.Mesh( geometry, material3);
+     			var cube2 = new THREE.Mesh(geometry, material2);
+			var cube3 = new THREE.Mesh(geometry, material);
+			scene.add(cube, cube2, cube3);
+
+			//position cubes
+			cube.position.set(-2,0,0);
+			cube2.position.set(2,0,0);
+
+			// add the light
+			var light = new THREE.PointLight(0xffffff, 1, 1000);
+			light.position.set(10, 10, 10);
+			scene.add(light);
+
+			function animate() {
+				geometry.rotateX(0.01);
+				geometry.rotateY(0.01);
+				requestAnimationFrame(animate);
+				renderer.render(scene, camera);
+				}
+			animate();
+
+
+		</script>
+	</body>
+</html>
+
