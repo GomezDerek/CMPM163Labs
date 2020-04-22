@@ -1,0 +1,12 @@
+Link to render of scene:
+https://drive.google.com/file/d/1FNKZbqreU1l4mup45_4FzhonYSY1nJZq/view?usp=sharing
+
+I created the left most cube using a shader with a color interpolation between red (0xFF0000) and green (0x00FF00)
+
+The 2nd cube on the left was made using a Mesh Phong material with no color and a specular of gray (0x666666) and a red (0xFF0000) emission. 
+
+The middle cube is a gray (0xDDDDDD) mesh phong material with a green (0x00FF00) specular. 
+
+The 2nd cube from the right is a orange (0xFFAA00) wireframe.
+
+The cube on the far right uses a shader to create a color interpolation between light purple( 0xACB6E5) and blue/green (0x74EBD5)
