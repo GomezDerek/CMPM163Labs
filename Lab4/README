@@ -1,0 +1,4 @@
+
+a. In order to get the x coordinate of a texture from a u value, use the formula x = floor(u*7)
+b. Getting the y coordinate of a texture from a given v value can be found using the formula y = floor(v*7)
+c. u,v(0.375, 0.25) -> x,y( floor(2.6) , floor(1.75) ) = (2,1) = WHITE
