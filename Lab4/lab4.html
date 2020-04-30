@@ -189,11 +189,13 @@
 
 
 			//tiling cube
+			texture1 = loader.load('assets/176.JPG');
+
             function addTextureShaderCube2() {
 				//console.log(document.getElementById('fragmentShader').textContent);
                 var uniforms = {texture1: { type: "t", value:
 					THREE.ImageUtils.loadTexture("assets/176.JPG")
-				})};
+				}};
 
                geometry1 = new THREE.BoxGeometry(1, 1, 1);
                material1 =  new THREE.ShaderMaterial({
