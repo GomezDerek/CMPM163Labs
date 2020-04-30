@@ -1,4 +1,18 @@
+Link to video of final render: 
+https://drive.google.com/file/d/1qZgECbDsz6xs_IDEd5nobr_8rWt-_p28/view?usp=sharing
 
-a. In order to get the x coordinate of a texture from a u value, use the formula x = floor(u*7)
-b. Getting the y coordinate of a texture from a given v value can be found using the formula y = floor(v*7)
-c. u,v(0.375, 0.25) -> x,y( floor(2.6) , floor(1.75) ) = (2,1) = WHITE
+
+The left cube was made by simply adding a texture map into its material.
+
+The center cube and right cube not only had texture maps added to their material, but corresponding normal maps were added as well.
+
+The upper cube was created by loading its texture through the fragment shader.
+
+The lower cube was created by tiling a texture from a 1x1 to a 4x4 in the fragment shader. I was able to do this by using a modulo function to output the texture's colors in uv coordinates at half the original coordinate values, and when there were still uv coordinates left although the texture's xy coordinates had all been processed, they were processed again.  
+
+
+24a. In order to get the x coordinate of a texture from a u value, use the formula x = floor(u*7)
+
+24b. Getting the y coordinate of a texture from a given v value can be found using the formula y = floor(v*7)
+
+24c. u,v(0.375, 0.25) -> x,y( floor(2.6) , floor(1.75) ) = (2,1) = WHITE
