@@ -13,5 +13,6 @@ Skybox            - the skybox I applied to my scene is from the Unity Asset Sto
 
 Part 2 screenshots:
 ![](images/part2_img.PNG)
+![]images/Lab6Screenshot.png
 
 
