@@ -11,8 +11,8 @@ Textures          - I applied textures to meant to mimic wooden flooring and gra
 
 Skybox            - the skybox I applied to my scene is from the Unity Asset Store and is called "Wispy Sky Box"
 
-Part 2 screenshots:
-![](images/material_inspo.jpg)
+Part 2 screenshot:
 ![](images/Lab6_Screenshot.png)
 
-
+Inspiration for material creation:
+![](images/material_inspo.jpg)
